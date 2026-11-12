@@ -20,7 +20,7 @@ export function CollectionCard({ collection: c }: { collection: Collection }) {
         <img src={c.image} alt={`${c.name} — eye wearing ${activeName} lens`} loading="lazy" width={1200} height={800} className="absolute inset-0 h-full w-full object-cover object-left transition-transform duration-700 group-hover:scale-105" />
         <div className="fade-right absolute inset-0" />
         <div className="fade-up absolute inset-0" />
-        <img src={productSet} alt="" aria-hidden="true" loading="lazy" width={1024} height={1024} className="absolute bottom-16 right-3 hidden w-28 rounded-md opacity-90 mix-blend-lighten sm:block lg:w-32" />
+        <img src={productSet} alt="" aria-hidden="true" loading="lazy" width={1024} height={1024} className="mask-soft absolute bottom-0 left-1/2 hidden w-32 -translate-x-1/4 opacity-90 sm:block lg:w-36" />
 
         <div className="absolute right-4 top-4 max-w-[60%] text-right sm:right-6 sm:top-6">
           <h3 className="text-xl text-foreground sm:text-3xl">{c.name.toUpperCase()}</h3>

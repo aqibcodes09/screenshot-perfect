@@ -46,7 +46,8 @@ export function Header() {
     <header className="sticky top-0 z-40">
       {/* Announcement bar */}
       <div className="bg-gold-gradient px-4 py-1.5 text-center text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-primary-foreground sm:text-xs">
-        {STORE.freeDeliveryNote} · Delivery across {STORE.deliveryCity} · {STORE.paymentMethod}
+        {STORE.freeDeliveryNote} · {STORE.deliveryCity}
+        <span className="hidden sm:inline"> · {STORE.paymentMethod}</span>
       </div>
 
       <div className="border-b border-border bg-ink/90 backdrop-blur-md">

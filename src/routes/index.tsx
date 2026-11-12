@@ -31,7 +31,7 @@ function Index() {
     <>
       {/* 1. HERO */}
       <section className="relative overflow-hidden bg-ink">
-        <div className="relative grid min-h-[560px] lg:min-h-[620px] lg:grid-cols-[1fr_1.1fr_0.9fr]">
+        <div className="relative grid min-h-[560px] lg:min-h-[620px] lg:grid-cols-[1fr_1.3fr_0.9fr]">
           {/* Eye photo (left) */}
           <div className="absolute inset-0 lg:relative lg:inset-auto">
             <img src={heroEye} alt="Close-up of an eye wearing a hazel Lenszora lens" width={1600} height={1008} className="h-full w-full object-cover object-[20%_50%] opacity-50 lg:opacity-100" />
@@ -60,7 +60,7 @@ function Index() {
 
           {/* Product (right) */}
           <div className="relative z-10 flex items-end justify-center px-6 pb-10 lg:items-center lg:pb-0">
-            <img src={productSet} alt="Lenszora lens box, solution bottle and lens cases" width={1024} height={1024} className="animate-float-soft w-60 rounded-xl mix-blend-lighten sm:w-72 lg:w-full lg:max-w-sm" />
+            <img src={productSet} alt="Lenszora lens box, solution bottle and lens cases" width={1024} height={1024} className="mask-soft animate-float-soft w-64 sm:w-80 lg:w-full lg:max-w-md" />
           </div>
           <p className="relative z-10 -mt-4 pb-8 text-center font-script text-3xl text-gold lg:hidden">More than just lenses… ♡</p>
         </div>

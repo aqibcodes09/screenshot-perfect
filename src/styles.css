@@ -193,6 +193,11 @@
   background-image: var(--gradient-fade-up);
 }
 
+@utility mask-soft {
+  -webkit-mask-image: radial-gradient(closest-side, black 62%, transparent 100%);
+  mask-image: radial-gradient(closest-side, black 62%, transparent 100%);
+}
+
 @utility shadow-gold {
   box-shadow: var(--shadow-gold);
 }

@@ -11,7 +11,6 @@ export function FloatingWhatsApp() {
       aria-label="Chat with us on WhatsApp"
       className="fixed bottom-5 right-5 z-50 flex size-14 items-center justify-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-gold transition-transform hover:scale-110"
     >
-      <span className="absolute inset-0 animate-ping rounded-full bg-whatsapp opacity-30" aria-hidden="true" />
       <WhatsAppIcon className="relative size-7" />
     </a>
   );

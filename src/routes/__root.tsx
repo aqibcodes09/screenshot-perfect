@@ -140,7 +140,7 @@ function RootComponent() {
         </main>
         <Footer />
         <FloatingWhatsApp />
-        <Toaster position="top-center" />
+        <Toaster position="top-center" theme="dark" />
       </CartProvider>
     </QueryClientProvider>
   );
