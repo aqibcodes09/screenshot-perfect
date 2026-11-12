@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- All shop-owner-editable data (prices, collections, shades, phone/WhatsApp numbers, social links) lives only in `src/config/store.ts`; components derive from it via `src/lib/store.ts` so the owner edits one file.
+- Orders have no payment gateway: the cart (localStorage) builds a pre-filled wa.me message; keep checkout WhatsApp-only unless the owner asks otherwise.
