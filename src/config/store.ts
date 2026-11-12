@@ -34,11 +34,11 @@ export type Collection = {
   /** Selling price in rupees (numbers only, no commas) */
   price: number;
   /** Old price for discounts (crossed out). Leave out if no discount. */
-  oldPrice?: number;
+  oldPrice?: number | undefined;
   /** Text inside the gold badge for discounts, e.g. "50% OFF" */
-  discountLabel?: string;
+  discountLabel?: string | undefined;
   /** Text like "5 COLORS AVAILABLE". Leave out to auto-count the shades. */
-  colorsLabel?: string;
+  colorsLabel?: string | undefined;
   description: string;
   image: string;
   shades: Shade[];

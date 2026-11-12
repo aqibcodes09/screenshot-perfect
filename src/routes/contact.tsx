@@ -11,7 +11,7 @@ import { NumberPicker } from "@/components/site/NumberPicker";
 import { PageHeader } from "@/components/site/PageHeader";
 import { SocialLinks } from "@/components/site/SocialLinks";
 import { STORE } from "@/config/store";
-import { waLink } from "@/lib/store";
+import { waLink, primaryContact } from "@/lib/store";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/contact")({
 
 function Contact() {
   const [form, setForm] = useState({ name: "", message: "" });
-  const [sendTo, setSendTo] = useState<string>(STORE.contacts[0].wa);
+  const [sendTo, setSendTo] = useState<string>(primaryContact.wa);
   const [error, setError] = useState("");
 
   const submit = (e: React.FormEvent) => {

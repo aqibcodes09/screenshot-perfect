@@ -7,12 +7,12 @@ import { ProductCard } from "@/components/site/ProductCard";
 import { cn } from "@/lib/utils";
 import { collections, products } from "@/lib/store";
 
-type ShopSearch = { collection?: string; q?: string };
+type ShopSearch = { collection?: string | undefined; q?: string | undefined };
 
 export const Route = createFileRoute("/shop")({
   validateSearch: (search: Record<string, unknown>): ShopSearch => ({
-    collection: typeof search.collection === "string" ? search.collection : undefined,
-    q: typeof search.q === "string" ? search.q : undefined,
+    collection: typeof search["collection"] === "string" ? search["collection"] : undefined,
+    q: typeof search["q"] === "string" ? search["q"] : undefined,
   }),
   head: () => ({
     meta: [

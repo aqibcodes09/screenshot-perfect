@@ -12,11 +12,12 @@ import { LensSwatch } from "./LensSwatch";
 export function CollectionCard({ collection: c }: { collection: Collection }) {
   const [active, setActive] = useState(0);
   const discounted = c.oldPrice !== undefined;
+  const activeName = c.shades[active]?.name ?? "";
 
   return (
     <article className="gold-card group relative overflow-hidden">
       <div className="relative aspect-[4/3] sm:aspect-[16/10]">
-        <img src={c.image} alt={`${c.name} — eye wearing ${c.shades[active].name} lens`} loading="lazy" width={1200} height={800} className="absolute inset-0 h-full w-full object-cover object-left transition-transform duration-700 group-hover:scale-105" />
+        <img src={c.image} alt={`${c.name} — eye wearing ${activeName} lens`} loading="lazy" width={1200} height={800} className="absolute inset-0 h-full w-full object-cover object-left transition-transform duration-700 group-hover:scale-105" />
         <div className="fade-right absolute inset-0" />
         <div className="fade-up absolute inset-0" />
         <img src={productSet} alt="" aria-hidden="true" loading="lazy" width={1024} height={1024} className="absolute bottom-16 right-3 hidden w-28 rounded-md opacity-90 mix-blend-lighten sm:block lg:w-32" />
@@ -53,7 +54,7 @@ export function CollectionCard({ collection: c }: { collection: Collection }) {
         </div>
         <div className="flex flex-wrap items-center justify-between gap-3">
           <p className="text-[0.7rem] uppercase tracking-[0.18em] text-muted-foreground">
-            <span className="text-gold">{c.shades[active].name}</span> · {colorsLabel(c)}
+            <span className="text-gold">{activeName}</span> · {colorsLabel(c)}
           </p>
           <Button asChild variant="gold" size="pill">
             <Link to="/collections/$slug" params={{ slug: c.slug }}>

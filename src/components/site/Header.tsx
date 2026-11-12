@@ -8,7 +8,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Button } from "@/components/ui/button";
 import { STORE } from "@/config/store";
 import { useCart } from "@/lib/cart";
-import { collections, waLink } from "@/lib/store";
+import { collections, waLink, primaryContact } from "@/lib/store";
 import { Logo } from "./Logo";
 
 const navLink =
@@ -169,7 +169,7 @@ export function Header() {
                   Add lenses to your cart and confirm your order on WhatsApp. For order updates, message us anytime.
                 </p>
                 <Button asChild variant="whatsapp" size="sm" className="mt-4 w-full">
-                  <a href={waLink(STORE.contacts[0].wa, "Hi Lenszora! I have a question about my order.")} target="_blank" rel="noreferrer">
+                  <a href={waLink(primaryContact.wa, "Hi Lenszora! I have a question about my order.")} target="_blank" rel="noreferrer">
                     Message us
                   </a>
                 </Button>

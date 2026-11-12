@@ -1,5 +1,5 @@
 import { STORE } from "@/config/store";
-import { waLink } from "@/lib/store";
+import { waLink, primaryContact } from "@/lib/store";
 import { FacebookIcon, InstagramIcon, TikTokIcon, WhatsAppIcon } from "./icons";
 
 export function SocialLinks() {
@@ -7,7 +7,7 @@ export function SocialLinks() {
     { href: STORE.social.instagram, label: "Instagram", Icon: InstagramIcon },
     { href: STORE.social.tiktok, label: "TikTok", Icon: TikTokIcon },
     { href: STORE.social.facebook, label: "Facebook", Icon: FacebookIcon },
-    { href: waLink(STORE.contacts[0].wa, "Hi Lenszora!"), label: "WhatsApp", Icon: WhatsAppIcon },
+    { href: waLink(primaryContact.wa, "Hi Lenszora!"), label: "WhatsApp", Icon: WhatsAppIcon },
   ];
   return (
     <div className="flex gap-3">

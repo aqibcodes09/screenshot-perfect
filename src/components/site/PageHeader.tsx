@@ -1,6 +1,6 @@
 import { SectionHeading } from "./SectionHeading";
 
-export function PageHeader({ title, subtitle, script }: { title: string; subtitle?: string; script?: string }) {
+export function PageHeader({ title, subtitle, script }: { title: string; subtitle?: string | undefined; script?: string | undefined }) {
   return (
     <section className="relative overflow-hidden border-b border-border bg-background px-6 py-14 sm:py-20">
       <SectionHeading title={title} subtitle={subtitle} />

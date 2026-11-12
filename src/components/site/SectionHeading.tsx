@@ -1,4 +1,4 @@
-export function SectionHeading({ title, subtitle }: { title: string; subtitle?: string }) {
+export function SectionHeading({ title, subtitle }: { title: string; subtitle?: string | undefined }) {
   return (
     <div className="text-center">
       <div className="flex items-center justify-center gap-4 sm:gap-6">

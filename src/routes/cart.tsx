@@ -13,7 +13,7 @@ import { QtyStepper } from "@/components/site/ProductCard";
 import { WhatsAppIcon } from "@/components/site/icons";
 import { STORE } from "@/config/store";
 import { useCart } from "@/lib/cart";
-import { buildOrderMessage, formatPrice, getProduct, waLink, type CheckoutDetails } from "@/lib/store";
+import { buildOrderMessage, formatPrice, getProduct, waLink, type CheckoutDetails, primaryContact } from "@/lib/store";
 
 export const Route = createFileRoute("/cart")({
   head: () => ({
@@ -45,7 +45,7 @@ function CartPage() {
   const { lines, subtotal, setQty, remove, clear } = useCart();
   const [details, setDetails] = useState<CheckoutDetails>({ name: "", phone: "", address: "", city: STORE.deliveryCity, notes: "" });
   const [errors, setErrors] = useState<Errors>({});
-  const [sendTo, setSendTo] = useState<string>(STORE.contacts[0].wa);
+  const [sendTo, setSendTo] = useState<string>(primaryContact.wa);
   const [sent, setSent] = useState(false);
 
   const update = (key: keyof CheckoutDetails) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
@@ -67,7 +67,7 @@ function CartPage() {
       <section className="px-6 py-24 text-center">
         <p className="font-script text-5xl text-gold">Thank you!</p>
         <p className="mx-auto mt-4 max-w-md text-muted-foreground">
-          Your order is ready in WhatsApp — just press send. We'll confirm it there. If WhatsApp didn't open, message us on {STORE.contacts[0].display}.
+          Your order is ready in WhatsApp — just press send. We'll confirm it there. If WhatsApp didn't open, message us on {primaryContact.display}.
         </p>
         <Button asChild variant="gold" size="xl" className="mt-8">
           <Link to="/shop">Continue Shopping <ArrowRight /></Link>

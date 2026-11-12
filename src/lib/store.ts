@@ -8,12 +8,15 @@ export type Product = {
   shade: Shade;
   collection: Collection;
   price: number;
-  oldPrice?: number;
+  oldPrice?: number | undefined;
 };
 
 export type CartLine = { productId: string; qty: number };
 
 export const collections: Collection[] = STORE.collections;
+
+/** First number in the settings — used for the floating WhatsApp button and quick orders. */
+export const primaryContact = STORE.contacts[0]!;
 
 export function getCollection(slug: string): Collection | undefined {
   return collections.find((c) => c.slug === slug);
@@ -59,7 +62,7 @@ export type CheckoutDetails = {
   phone: string;
   address: string;
   city: string;
-  notes?: string;
+  notes?: string | undefined;
 };
 
 export function buildOrderMessage(details: CheckoutDetails, lines: CartLine[]): string {

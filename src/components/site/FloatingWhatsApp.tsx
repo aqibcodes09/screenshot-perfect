@@ -1,11 +1,11 @@
 import { STORE } from "@/config/store";
-import { waLink } from "@/lib/store";
+import { waLink, primaryContact } from "@/lib/store";
 import { WhatsAppIcon } from "./icons";
 
 export function FloatingWhatsApp() {
   return (
     <a
-      href={waLink(STORE.contacts[0].wa, "Hi Lenszora! I'd like to know more about your lenses.")}
+      href={waLink(primaryContact.wa, "Hi Lenszora! I'd like to know more about your lenses.")}
       target="_blank"
       rel="noreferrer"
       aria-label="Chat with us on WhatsApp"

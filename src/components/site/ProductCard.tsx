@@ -5,7 +5,7 @@ import { useNavigate } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { STORE } from "@/config/store";
 import { useCart } from "@/lib/cart";
-import { buildQuickOrderMessage, formatPrice, waLink, type Product } from "@/lib/store";
+import { buildQuickOrderMessage, formatPrice, waLink, type Product, primaryContact } from "@/lib/store";
 import { LensSwatch } from "./LensSwatch";
 import { WhatsAppIcon } from "./icons";
 
@@ -64,7 +64,7 @@ export function ProductCard({ product: p }: { product: Product }) {
             <ShoppingBag /> Add to Cart
           </Button>
           <Button asChild variant="whatsapp" size="pill" className="w-full">
-            <a href={waLink(STORE.contacts[0].wa, buildQuickOrderMessage(p, qty))} target="_blank" rel="noreferrer">
+            <a href={waLink(primaryContact.wa, buildQuickOrderMessage(p, qty))} target="_blank" rel="noreferrer">
               <WhatsAppIcon /> Order on WhatsApp
             </a>
           </Button>

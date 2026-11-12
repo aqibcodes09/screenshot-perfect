@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { STORE } from "@/config/store";
-import { collections, waLink } from "@/lib/store";
+import { collections, waLink, primaryContact } from "@/lib/store";
 import { Logo } from "./Logo";
 import { SocialLinks } from "./SocialLinks";
 
@@ -12,7 +12,7 @@ export function Footer() {
   // No email service yet: subscriptions are sent to the shop on WhatsApp.
   const subscribe = (e: React.FormEvent) => {
     e.preventDefault();
-    window.open(waLink(STORE.contacts[0].wa, `Hi Lenszora! Please add me to your updates: ${email}`), "_blank");
+    window.open(waLink(primaryContact.wa, `Hi Lenszora! Please add me to your updates: ${email}`), "_blank");
     setEmail("");
   };
 
